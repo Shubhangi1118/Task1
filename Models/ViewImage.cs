@@ -6,6 +6,7 @@ namespace Task1.Models
     {
         public ObjectId Id { get; set; }
         public string url { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
        
     }

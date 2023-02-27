@@ -151,7 +151,7 @@ namespace Task1.Controllers
                 var byteImage = await bucket.DownloadAsBytesAsync(doc["Id"]);
                 string im = Convert.ToBase64String(byteImage);
                 string url = string.Format("data:image/png;base64,{0}", im);
-                list.Add(new ViewImage() { Id =(ObjectId)doc["Id"],url = url,Description = doc["Description"].ToString()  });
+                list.Add(new ViewImage() { Id =(ObjectId)doc["Id"],url = url, Title = doc["Title"].ToString(), Description = doc["Description"].ToString()  });
             }
             return View(list);
         }

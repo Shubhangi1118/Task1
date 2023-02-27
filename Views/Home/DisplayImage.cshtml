@@ -5,7 +5,7 @@
 }
 @foreach (var image in Model)
 {
-    <img src="@image.url" alt="@image.Id" data-description="@image.Description" onclick="showDescription(this)">
+    <img src="@image.url" alt="@image.Title" data-description="@image.Description" onclick="showDescription(this)">
     
 }
 
