@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Task1.Models.Home>
+
+@{
+    ViewBag.Title = "UserDetails";
+}
+
+<h3 style="text-align:center">User Names</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @using (Html.BeginForm(new { controller = "Home", action = "DisplayCountry", Country = item.Country.ToString()}))
+                {
+                    <input type ="submit" value=@Html.DisplayFor(modelItem=>item.Name)>
+                }
+            </td>
+        </tr>
+    }
+
+</table>   

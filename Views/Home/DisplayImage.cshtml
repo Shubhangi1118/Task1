@@ -1,0 +1,19 @@
+﻿<style></style>
+@model IEnumerable<Task1.Models.ViewImage>
+@{
+    ViewBag.Title = "Images";
+}
+@foreach (var image in Model)
+{
+    <img src="@image.url" alt="@image.Id" data-description="@image.Description" onclick="showDescription(this)">
+    
+}
+
+<div id="description-container"></div>
+
+<script>
+    function showDescription(image) {
+        var description = image.dataset.description;
+        document.getElementById("description-container").innerHTML = description;
+    }
+</script>
